@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-005",
+  "category": "temporal-reasoning",
+  "title": "Next NSF 26-510 Deadline",
+  "question": "As of September 2, 2026, what is the next full-proposal deadline under NSF solicitation 26-510?",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "NSF-26-510"
+  ]
+}

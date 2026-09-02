@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-010",
+  "category": "multi-field-extraction",
+  "title": "FORCEFIELDS Award",
+  "question": "For Charles River Analytics' FORCEFIELDS award, identify the award phase, awarding branch, and total award amount.",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "SBIR-FORCEFIELDS"
+  ]
+}

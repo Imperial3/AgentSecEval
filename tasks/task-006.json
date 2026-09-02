@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-006",
+  "category": "procedural-reasoning",
+  "title": "NSF Phase I Project Pitch",
+  "question": "Can an NSF Phase I proposer submit a full proposal under NSF 26-510 without first receiving an official Project Pitch invitation?",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "NSF-26-510"
+  ]
+}

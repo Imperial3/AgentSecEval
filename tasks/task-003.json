@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-003",
+  "category": "regulatory-reasoning",
+  "title": "STTR Work Allocation",
+  "question": "Under STTR, what minimum percentage of the research work must be performed by the small business and what minimum percentage must be performed by the partnering research institution?",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "SBIR-POLICY"
+  ]
+}
