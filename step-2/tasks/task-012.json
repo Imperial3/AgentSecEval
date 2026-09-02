@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-012",
+  "category": "multi-field-extraction",
+  "title": "Galois MAPACHE Award",
+  "question": "What phase, awarding branch, and total award amount are recorded for Galois's 2026 MAPACHE project?",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "SBIR-MAPACHE"
+  ]
+}

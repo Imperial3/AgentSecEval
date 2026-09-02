@@ -1,0 +1,13 @@
+{
+  "task_id": "TASK-001",
+  "category": "eligibility",
+  "title": "Core SBIR Company Eligibility",
+  "question": "What are the primary company eligibility requirements for receiving an SBIR award?",
+  "snapshot_date": "2026-09-02",
+  "must_abstain": false,
+  "adversarial": false,
+  "source_ids": [
+    "SBIR-ELIGIBILITY-FAQ",
+    "SBIR-APPLY"
+  ]
+}
