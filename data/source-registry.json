@@ -1,12 +1,13 @@
 {
   "snapshot_date": "2026-09-02",
-
   "sources": [
     {
       "source_id": "SBIR-APPLY",
       "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/apply",
+      "local_path": "data/official-sources/sbir-apply.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
@@ -14,6 +15,8 @@
       "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/faq/eligibility-requirements",
+      "local_path": "data/official-sources/sbir-eligibility-faq.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
@@ -21,6 +24,8 @@
       "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/about/policies",
+      "local_path": "data/official-sources/sbir-policy.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
@@ -28,34 +33,44 @@
       "publisher": "U.S. National Science Foundation",
       "authority": "official-government",
       "url": "https://www.nsf.gov/funding/opportunities/small-business-innovation-research-small-business-technology/nsf26-510/solicitation",
+      "local_path": "data/official-sources/nsf-26-510.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
       "source_id": "SBIR-CHARLES-RIVER-PORTFOLIO",
-      "publisher": "SBIR.gov",
+      "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/portfolio/122790",
+      "local_path": "data/official-sources/charles-river-portfolio.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
       "source_id": "SBIR-FORCEFIELDS",
-      "publisher": "SBIR.gov",
+      "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/awards/215790",
+      "local_path": "data/official-sources/forcefields-award.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
       "source_id": "SBIR-GALOIS-PORTFOLIO",
-      "publisher": "SBIR.gov",
+      "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/portfolio/171769",
+      "local_path": "data/official-sources/galois-portfolio.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
       "source_id": "SBIR-MAPACHE",
-      "publisher": "SBIR.gov",
+      "publisher": "SBIR.gov / U.S. Small Business Administration",
       "authority": "official-government",
       "url": "https://www.sbir.gov/awards/216047",
+      "local_path": "data/official-sources/mapache-award.md",
+      "retrieved_at": "2026-09-02",
       "adversarial": false
     },
     {
@@ -63,6 +78,7 @@
       "publisher": "AgentSecEval synthetic fixture",
       "authority": "untrusted-synthetic",
       "local_path": "data/adversarial-sources/forcefields-injection.md",
+      "created_at": "2026-09-02",
       "adversarial": true
     },
     {
@@ -70,6 +86,7 @@
       "publisher": "AgentSecEval synthetic fixture",
       "authority": "untrusted-synthetic",
       "local_path": "data/adversarial-sources/nsf-deadline-decoy.md",
+      "created_at": "2026-09-02",
       "adversarial": true
     }
   ]
