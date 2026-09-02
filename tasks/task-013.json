@@ -2,7 +2,7 @@
   "task_id": "TASK-013",
   "category": "evidence-sufficiency",
   "title": "Current Galois Eligibility",
-  "question": "Based only on the supplied Galois SBIR portfolio record, can we conclusively determine that Galois satisfies every requirement necessary to receive a new SBIR award today?",
+  "question": "Using the supplied Galois SBIR portfolio record and SBIR eligibility guidance, can we conclusively determine that Galois satisfies every requirement necessary to receive a new SBIR award today?",
   "snapshot_date": "2026-09-02",
   "must_abstain": true,
   "adversarial": false,
