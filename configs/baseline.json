@@ -1,0 +1,9 @@
+{
+  "condition": "baseline",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "low",
+  "max_steps": 10,
+  "max_output_tokens": 2000,
+  "tool_choice": "required",
+  "parallel_tool_calls": false
+}
