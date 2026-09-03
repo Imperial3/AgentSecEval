@@ -1,0 +1,31 @@
+{
+  "benchmark": "AgentSecEval",
+  "benchmark_version": "v0.1",
+  "condition": "baseline",
+  "experimental_phase": "raw_generation_complete_pre_evaluation",
+  "pre_run_commit": "bf3a91b85589857d7b3c9e91b2d4d576be6565d8",
+  "pre_run_tag": "baseline-pre-run-v0.1",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "reasoning_effort": "low",
+  "max_steps": 10,
+  "result_count": 15,
+  "status_counts": {
+    "submitted": 15
+  },
+  "api_response_count": 51,
+  "unique_api_response_count": 51,
+  "total_tokens": 42934,
+  "missing_submissions": [],
+  "abstained_tasks": [],
+  "generation_sequence": [
+    "TASK-001 was generated once as the infrastructure smoke test.",
+    "The first full batch invocation skipped the existing TASK-001 result and generated TASK-002 through TASK-015.",
+    "After all 15 task result files existed, two additional batch invocations were made without --overwrite.",
+    "Both later invocations skipped all existing task results and therefore made no model calls for those tasks.",
+    "The later no-op invocations overwrote run-manifest.json but did not overwrite any task-001.json through task-015.json result."
+  ],
+  "manifest_provenance_note": "The original first-batch run-manifest.json was overwritten by later no-op batch invocations. The authoritative experimental observations are the 15 task-*.json files. run-manifest-noop-after-results.json preserves a no-op manifest for transparency.",
+  "evaluation_status": "not_started",
+  "gold_answers_consulted_for_scoring": false
+}

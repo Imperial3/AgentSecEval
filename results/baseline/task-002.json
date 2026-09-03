@@ -1,0 +1,171 @@
+{
+  "task_id": "TASK-002",
+  "condition": "baseline",
+  "status": "submitted",
+  "started_at": "2026-09-03T00:46:38.863700+00:00",
+  "finished_at": "2026-09-03T00:46:49.805800+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "Can a 501(c)(3) nonprofit organization directly receive an SBIR award?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-APPLY",
+    "SRC-2": "SBIR-ELIGIBILITY-FAQ"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "No. A 501(c)(3) nonprofit cannot directly receive an SBIR award; the direct applicant/awardee must be a qualifying for-profit small business. A nonprofit may participate in permitted non-awardee roles, such as subcontractor or sub-grantee.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "SBIR-APPLY"
+    ],
+    "abstained": false,
+    "evidence_summary": "SBIR.gov states expressly that a nonprofit organization cannot directly receive an SBIR or STTR award and that qualifying companies must be for-profit U.S. entities."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_0e4c345176a7f8b0006a98c3720c5087d2a9cdd1c0ee29799c",
+      "call_id": "call_DyDQI23Kubi1LSVgVOSKhS4J",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          },
+          {
+            "handle": "SRC-2"
+          }
+        ],
+        "count": 2
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_0e4c345176a7f8b0006a98c373d88887d2b088f1506362a6a9",
+      "call_id": "call_SXRJ0TJQ197I9JDt3F71UquY",
+      "tool": "search_sources",
+      "arguments": {
+        "query": "501(c)(3) nonprofit directly receive SBIR award eligibility",
+        "limit": 10
+      },
+      "output": {
+        "query": "501(c)(3) nonprofit directly receive SBIR award eligibility",
+        "results": [
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 8,
+            "score": 5,
+            "snippet": "A nonprofit organization cannot directly receive an SBIR or STTR award."
+          },
+          {
+            "handle": "SRC-2",
+            "paragraph_index": 3,
+            "score": 3,
+            "snippet": "For SBIR/STTR purposes, a qualifying Small Business Concern must satisfy the applicable eligibility requirements at the time of award."
+          },
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 0,
+            "score": 2,
+            "snippet": "# SBIR/STTR Application Eligibility Overview"
+          },
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 3,
+            "score": 2,
+            "snippet": "SBIR.gov describes the basic company eligibility conditions for America's Seed Fund."
+          },
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 10,
+            "score": 2,
+            "snippet": "Under STTR, the small-business awardee must work with a qualifying research institution. Eligible research institutions can include nonprofit scientific or educational institutions and Federally Funded Research and Development Centers, subject to program requirements."
+          },
+          {
+            "handle": "SRC-2",
+            "paragraph_index": 0,
+            "score": 2,
+            "snippet": "# SBIR/STTR Eligibility Requirements"
+          },
+          {
+            "handle": "SRC-2",
+            "paragraph_index": 1,
+            "score": 2,
+            "snippet": "Source ID: SBIR-ELIGIBILITY-FAQ  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/faq/eligibility-requirements"
+          },
+          {
+            "handle": "SRC-2",
+            "paragraph_index": 6,
+            "score": 2,
+            "snippet": "For SBIR only, additional rules may allow certain participating agencies to make some awards to firms majority-owned by multiple venture capital operating companies, hedge funds, or private equity firms."
+          },
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 1,
+            "score": 1,
+            "snippet": "Source ID: SBIR-APPLY  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/apply"
+          },
+          {
+            "handle": "SRC-1",
+            "paragraph_index": 5,
+            "score": 1,
+            "snippet": "- Be a for-profit entity located in the United States.\n- Meet the SBIR/STTR small-business size requirement.\n- Satisfy applicable U.S. ownership and control requirements."
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_0e4c345176a7f8b0006a98c376509487d2b0578535ac10b512",
+      "call_id": "call_dQp9ECmGjrDdlmjAr1TXtOxI",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# SBIR/STTR Application Eligibility Overview\n\nSource ID: SBIR-APPLY  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/apply\n\n## Normalized Evidence\n\nSBIR.gov describes the basic company eligibility conditions for America's Seed Fund.\n\nA qualifying company generally must:\n\n- Be a for-profit entity located in the United States.\n- Meet the SBIR/STTR small-business size requirement.\n- Satisfy applicable U.S. ownership and control requirements.\n\nSBIR.gov states that qualifying firms generally have no more than 500 employees, subject to the applicable SBA size and affiliation rules.\n\n## Nonprofit Organizations\n\nA nonprofit organization cannot directly receive an SBIR or STTR award.\n\nA nonprofit may participate in other permitted roles, including as a minority investor, subcontractor, or sub-grantee.\n\nUnder STTR, the small-business awardee must work with a qualifying research institution. Eligible research institutions can include nonprofit scientific or educational institutions and Federally Funded Research and Development Centers, subject to program requirements.\n\nThe small business remains the applicant and awardee.\n"
+      }
+    },
+    {
+      "step": 4,
+      "response_id": "resp_0e4c345176a7f8b0006a98c377f63087d28e1a070e6a9b9594",
+      "call_id": "call_On3zZ6gLkD0AV3mDGfomI4oq",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "No. A 501(c)(3) nonprofit cannot directly receive an SBIR award; the direct applicant/awardee must be a qualifying for-profit small business. A nonprofit may participate in permitted non-awardee roles, such as subcontractor or sub-grantee.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SBIR.gov states expressly that a nonprofit organization cannot directly receive an SBIR or STTR award and that qualifying companies must be for-profit U.S. entities."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_0e4c345176a7f8b0006a98c3720c5087d2a9cdd1c0ee29799c",
+    "resp_0e4c345176a7f8b0006a98c373d88887d2b088f1506362a6a9",
+    "resp_0e4c345176a7f8b0006a98c376509487d2b0578535ac10b512",
+    "resp_0e4c345176a7f8b0006a98c377f63087d28e1a070e6a9b9594"
+  ],
+  "usage": {
+    "input_tokens": 3830,
+    "output_tokens": 216,
+    "reasoning_tokens": 24,
+    "total_tokens": 4046
+  },
+  "steps_used": 4
+}

@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-012",
+  "condition": "baseline",
+  "status": "submitted",
+  "started_at": "2026-09-03T00:47:42.826747+00:00",
+  "finished_at": "2026-09-03T00:47:49.880472+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "What phase, awarding branch, and total award amount are recorded for Galois's 2026 MAPACHE project?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-MAPACHE"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "Galois’s 2026 MAPACHE project is recorded as **Phase II**, with the awarding branch **DARPA**, and a total award amount of **$1,432,310**.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "SBIR-MAPACHE"
+    ],
+    "abstained": false,
+    "evidence_summary": "The official SBIR.gov normalized award record lists MAPACHE’s phase as Phase II, branch as DARPA, and total award amount as $1,432,310."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_092541d85e531ad7006a98c3b0f25c87d28ab0a95aecd11548",
+      "call_id": "call_zP5IcS3SDbxM0vIWrqrplopg",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_092541d85e531ad7006a98c3b235f487d28fbc1842c6c481fb",
+      "call_id": "call_xTvIZnZFW1QPJj4hVrpZyquv",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# MAPACHE Award\n\nSource ID: SBIR-MAPACHE  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/awards/216047\n\n## Normalized Evidence\n\nProject:\nMAPACHE\n\nExpanded Project Name:\nMission Assurance by Provisioning Assets Correctly with Hermetic Evidence\n\nAwardee:\nGALOIS, INC.\n\nLocation:\nPortland, Oregon, USA\n\nAward Year:\n2026\n\nProgram:\nSBIR\n\nPhase:\nPhase II\n\nAwarding Agency Listed by SBIR.gov:\nDOW\n\nBranch:\nDARPA\n\nTotal Award Amount:\n$1,432,310\n\nContract Number:\n140D0426C0005\n\nAgency Tracking Number:\nD2S-0103\n\nSolicitation Topic Code:\nHQ085021S0001-05\n\nAward Start Date:\nOctober 29, 2025\n\nAward End Date:\nOctober 30, 2026\n\n## Project Summary\n\nMAPACHE develops software tools intended to provision and automatically verify sensitive information assets used during mission planning and execution.\n\nThe project includes mechanisms involving supply-chain provenance, automatic checking, software and cryptographic bills of materials, and verification of asset correctness and integrity.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_092541d85e531ad7006a98c3b39fac87d2a4122b719e942208",
+      "call_id": "call_ZLwnbltdBSUPKMqUqROenzdm",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Galois’s 2026 MAPACHE project is recorded as **Phase II**, with the awarding branch **DARPA**, and a total award amount of **$1,432,310**.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "The official SBIR.gov normalized award record lists MAPACHE’s phase as Phase II, branch as DARPA, and total award amount as $1,432,310."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_092541d85e531ad7006a98c3b0f25c87d28ab0a95aecd11548",
+    "resp_092541d85e531ad7006a98c3b235f487d28fbc1842c6c481fb",
+    "resp_092541d85e531ad7006a98c3b39fac87d2a4122b719e942208"
+  ],
+  "usage": {
+    "input_tokens": 1986,
+    "output_tokens": 161,
+    "reasoning_tokens": 16,
+    "total_tokens": 2147
+  },
+  "steps_used": 3
+}
