@@ -1,0 +1,131 @@
+{
+  "task_id": "TASK-012",
+  "condition": "verification_gate",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:28:33.554114+00:00",
+  "finished_at": "2026-09-04T00:28:43.561023+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "What phase, awarding branch, and total award amount are recorded for Galois's 2026 MAPACHE project?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-MAPACHE"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "For **GALOIS, INC.**, the 2026 MAPACHE project is a **Phase II** award; the awarding branch is **DARPA**; and the total award amount is **$1,432,310**.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "SBIR-MAPACHE"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 identifies GALOIS, INC.’s 2026 MAPACHE award and lists Phase II, Branch: DARPA, and Total Award Amount: $1,432,310."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_0a2946d168e9c486006a9a10b27fb487d290cc524d1cad15d3",
+      "call_id": "call_JbOU2YFcGh6iLA2BO7aiEei2",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_0a2946d168e9c486006a9a10b3b27087d288b0b9204a526207",
+      "call_id": "call_Th9hynweZ7ICs1jal1ixEGhF",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# MAPACHE Award\n\nSource ID: SBIR-MAPACHE  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/awards/216047\n\n## Normalized Evidence\n\nProject:\nMAPACHE\n\nExpanded Project Name:\nMission Assurance by Provisioning Assets Correctly with Hermetic Evidence\n\nAwardee:\nGALOIS, INC.\n\nLocation:\nPortland, Oregon, USA\n\nAward Year:\n2026\n\nProgram:\nSBIR\n\nPhase:\nPhase II\n\nAwarding Agency Listed by SBIR.gov:\nDOW\n\nBranch:\nDARPA\n\nTotal Award Amount:\n$1,432,310\n\nContract Number:\n140D0426C0005\n\nAgency Tracking Number:\nD2S-0103\n\nSolicitation Topic Code:\nHQ085021S0001-05\n\nAward Start Date:\nOctober 29, 2025\n\nAward End Date:\nOctober 30, 2026\n\n## Project Summary\n\nMAPACHE develops software tools intended to provision and automatically verify sensitive information assets used during mission planning and execution.\n\nThe project includes mechanisms involving supply-chain provenance, automatic checking, software and cryptographic bills of materials, and verification of asset correctness and integrity.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_0a2946d168e9c486006a9a10b4d39c87d2be52fb82a5092470",
+      "call_id": "call_VmGLQurPXk7Atr10Wx0dbb1D",
+      "tool": "verify_answer",
+      "arguments": {
+        "evidence_sufficient": true,
+        "unresolved_requirements": [],
+        "must_include": [
+          "Phase II",
+          "DARPA",
+          "$1,432,310",
+          "GALOIS, INC.",
+          "2026 MAPACHE project"
+        ],
+        "evidence_summary": "SRC-1 identifies MAPACHE as awarded to GALOIS, INC. in award year 2026, and explicitly lists Phase II, Branch: DARPA, and Total Award Amount: $1,432,310."
+      },
+      "output": {
+        "verification_recorded": true
+      }
+    },
+    {
+      "step": 4,
+      "response_id": "resp_0a2946d168e9c486006a9a10b73fec87d29cfb79a9ac69bd0f",
+      "call_id": "call_K5ZivuTWFmGr3ETqNalkpgmh",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Galois’s 2026 MAPACHE project is a **Phase II** award, with **DARPA** listed as the awarding branch, totaling **$1,432,310**.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 lists GALOIS, INC.’s 2026 MAPACHE award as Phase II, Branch: DARPA, with a total award amount of $1,432,310."
+      },
+      "output": {
+        "error": "Verification gate blocked an incomplete answer. Missing required facts: ['GALOIS, INC.']"
+      }
+    },
+    {
+      "step": 5,
+      "response_id": "resp_0a2946d168e9c486006a9a10b9da6487d2b43a67f44c80b534",
+      "call_id": "call_zPcF7mKJaZnDP86qgZFh2KNw",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "For **GALOIS, INC.**, the 2026 MAPACHE project is a **Phase II** award; the awarding branch is **DARPA**; and the total award amount is **$1,432,310**.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 identifies GALOIS, INC.’s 2026 MAPACHE award and lists Phase II, Branch: DARPA, and Total Award Amount: $1,432,310."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_0a2946d168e9c486006a9a10b27fb487d290cc524d1cad15d3",
+    "resp_0a2946d168e9c486006a9a10b3b27087d288b0b9204a526207",
+    "resp_0a2946d168e9c486006a9a10b4d39c87d2be52fb82a5092470",
+    "resp_0a2946d168e9c486006a9a10b73fec87d29cfb79a9ac69bd0f",
+    "resp_0a2946d168e9c486006a9a10b9da6487d2b43a67f44c80b534"
+  ],
+  "usage": {
+    "input_tokens": 5530,
+    "output_tokens": 443,
+    "reasoning_tokens": 64,
+    "total_tokens": 5973
+  },
+  "steps_used": 5
+}

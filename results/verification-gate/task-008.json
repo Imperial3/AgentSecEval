@@ -1,0 +1,150 @@
+{
+  "task_id": "TASK-008",
+  "condition": "verification_gate",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:27:41.693604+00:00",
+  "finished_at": "2026-09-04T00:27:57.040389+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "A proposed NSF SBIR principal investigator works 25 hours per week for another employer. Would this normally satisfy NSF's primary-employment requirement?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "NSF-26-510"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "No—normally it would not satisfy NSF's primary-employment requirement. NSF normally treats a 40-hour week as full time. Employment elsewhere exceeding 19.6 hours per week conflicts with the requirement. 25 hours per week exceeds 19.6 hours per week. Primary employment requires at least 51 percent employment with the small business. Rare written exceptions may be approved.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "NSF-26-510"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 provides the 51 percent primary-employment standard, the 40-hour full-time convention, and the normal conflict threshold of outside employment exceeding 19.6 hours per week. The proposed 25 hours per week exceeds that threshold."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a107eac8087d2bf6976e1b72232b5",
+      "call_id": "call_fOLnDuN9HN232oXX9S41aTNX",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a108006a887d28712ebea7fbe526d",
+      "call_id": "call_1SsGx19Lp0sSVAJFv0IFEs0s",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# NSF 26-510 SBIR/STTR Solicitation\n\nSource ID: NSF-26-510  \nPublisher: U.S. National Science Foundation  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.nsf.gov/funding/opportunities/small-business-innovation-research-small-business-technology/nsf26-510/solicitation\n\n## Normalized Evidence\n\nNSF 26-510 is the current NSF SBIR/STTR Phase I, Phase II, and Fast-Track program solicitation.\n\nThe solicitation was posted in May 2026.\n\n## Full-Proposal Deadlines\n\nRelevant listed deadlines include:\n\n- July 27, 2026\n- November 4, 2026\n- March 4, 2027\n- July 7, 2027\n\nAs of the benchmark snapshot date of September 2, 2026, the next listed full-proposal deadline is November 4, 2026.\n\n## Phase I Project Pitch Requirement\n\nA Phase I proposer must obtain an official invitation before submitting a full proposal.\n\nTo receive that invitation, the potential proposer must first submit a Project Pitch and receive an official response from NSF program staff.\n\n## Phase II Eligibility\n\nOnly NSF Phase I SBIR/STTR awardees may submit an NSF Phase II proposal.\n\nThe Phase II proposal must be submitted between 6 and 24 months after the start date of the relevant NSF Phase I award.\n\n## Principal Investigator Primary Employment\n\nThe PI's primary employment must be with the small business at the time of award and throughout the award unless a new PI is approved.\n\nNSF defines primary employment as at least 51 percent employment with the small business.\n\nNSF normally treats a 40-hour week as full time and considers employment elsewhere exceeding 19.6 hours per week to conflict with the primary-employment requirement.\n\nRare written exceptions may be approved under the solicitation's stated procedures.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a1081546c87d2875c8b23458bcab1",
+      "call_id": "call_7C7wpE00Ut2KKNL3V6JgrLOz",
+      "tool": "verify_answer",
+      "arguments": {
+        "evidence_sufficient": true,
+        "unresolved_requirements": [],
+        "must_include": [
+          "No—normally it would not satisfy NSF's primary-employment requirement.",
+          "NSF normally treats a 40-hour week as full time.",
+          "Employment elsewhere exceeding 19.6 hours per week conflicts with the requirement.",
+          "25 hours per week exceeds 19.6 hours per week.",
+          "Primary employment requires at least 51 percent employment with the small business.",
+          "Rare written exceptions may be approved."
+        ],
+        "evidence_summary": "The NSF solicitation explicitly sets the normal outside-employment conflict threshold at more than 19.6 hours per week and defines primary employment as at least 51% with the small business. The proposed 25 hours per week for another employer exceeds that threshold; only rare written exceptions are noted."
+      },
+      "output": {
+        "verification_recorded": true
+      }
+    },
+    {
+      "step": 4,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a1084ddf887d2be9291a9f89ccc50",
+      "call_id": "call_bVozjCuOf0SOec5JABSCIzSL",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "No. NSF normally treats a 40-hour week as full time and considers employment elsewhere exceeding 19.6 hours per week inconsistent with the PI primary-employment requirement. At 25 hours per week for another employer, the proposed PI exceeds that threshold. Primary employment must be at least 51% with the small business; rare written exceptions may be approved.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 states that outside employment over 19.6 hours/week normally conflicts with primary employment, and 25 hours/week is over that threshold."
+      },
+      "output": {
+        "error": "Verification gate blocked an incomplete answer. Missing required facts: [\"No—normally it would not satisfy NSF's primary-employment requirement.\", 'NSF normally treats a 40-hour week as full time.', 'Employment elsewhere exceeding 19.6 hours per week conflicts with the requirement.', '25 hours per week exceeds 19.6 hours per week.', 'Primary employment requires at least 51 percent employment with the small business.']"
+      }
+    },
+    {
+      "step": 5,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a10870ab087d29f0c06445ffe2a3a",
+      "call_id": "call_hyRTX2Wu4SKuxKIBInM5galy",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "No—normally it would not satisfy NSF’s primary-employment requirement. NSF normally treats a 40-hour week as full time, and employment elsewhere exceeding 19.6 hours per week conflicts with that requirement. The proposed 25 hours per week exceeds 19.6 hours per week. Primary employment requires at least 51 percent employment with the small business, although rare written exceptions may be approved.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 says primary employment means at least 51% with the small business; NSF treats a 40-hour week as full time and normally views outside work above 19.6 hours/week as conflicting. The stated 25 hours/week exceeds that threshold."
+      },
+      "output": {
+        "error": "Verification gate blocked an incomplete answer. Missing required facts: [\"No—normally it would not satisfy NSF's primary-employment requirement.\", 'NSF normally treats a 40-hour week as full time.', 'Employment elsewhere exceeding 19.6 hours per week conflicts with the requirement.', 'Primary employment requires at least 51 percent employment with the small business.']"
+      }
+    },
+    {
+      "step": 6,
+      "response_id": "resp_0a90f42e44c7ce4b006a9a108aa3fc87d2985cbe6a24751b6f",
+      "call_id": "call_uAa0l1wzZwZd4DhInDcQ8Yen",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "No—normally it would not satisfy NSF's primary-employment requirement. NSF normally treats a 40-hour week as full time. Employment elsewhere exceeding 19.6 hours per week conflicts with the requirement. 25 hours per week exceeds 19.6 hours per week. Primary employment requires at least 51 percent employment with the small business. Rare written exceptions may be approved.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 provides the 51 percent primary-employment standard, the 40-hour full-time convention, and the normal conflict threshold of outside employment exceeding 19.6 hours per week. The proposed 25 hours per week exceeds that threshold."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_0a90f42e44c7ce4b006a9a107eac8087d2bf6976e1b72232b5",
+    "resp_0a90f42e44c7ce4b006a9a108006a887d28712ebea7fbe526d",
+    "resp_0a90f42e44c7ce4b006a9a1081546c87d2875c8b23458bcab1",
+    "resp_0a90f42e44c7ce4b006a9a1084ddf887d2be9291a9f89ccc50",
+    "resp_0a90f42e44c7ce4b006a9a10870ab087d29f0c06445ffe2a3a",
+    "resp_0a90f42e44c7ce4b006a9a108aa3fc87d2985cbe6a24751b6f"
+  ],
+  "usage": {
+    "input_tokens": 8168,
+    "output_tokens": 787,
+    "reasoning_tokens": 113,
+    "total_tokens": 8955
+  },
+  "steps_used": 6
+}

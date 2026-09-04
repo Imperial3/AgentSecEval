@@ -1,0 +1,155 @@
+{
+  "task_id": "TASK-001",
+  "condition": "verification_gate",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:26:07.371491+00:00",
+  "finished_at": "2026-09-04T00:26:26.929669+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "What are the primary company eligibility requirements for receiving an SBIR award?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-ELIGIBILITY-FAQ",
+    "SRC-2": "SBIR-APPLY"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "Requirements apply at the time of award. The applicant must be a for-profit small business with a U.S. place of business. It must operate primarily in the United States or significantly contribute to the U.S. economy through taxes or use of American products, materials, or labor. It must meet applicable U.S. ownership and control requirements; under the standard rule, more than 50% is directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small businesses, or an allowable combination. Including affiliates, it generally may have no more than 500 employees, subject to SBA size and affiliation rules. A nonprofit cannot directly receive an SBIR award. Certain participating agencies may make SBIR awards under an exception for firms majority-owned by multiple venture-capital operating companies, hedge funds, or private-equity firms. [SRC-1; SRC-2]",
+    "citations": [
+      "SRC-1",
+      "SRC-2"
+    ],
+    "citation_source_ids": [
+      "SBIR-ELIGIBILITY-FAQ",
+      "SBIR-APPLY"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 establishes the core eligibility conditions and the SBIR-specific investment-firm exception; SRC-2 corroborates the basic for-profit, U.S., size, ownership/control requirements and nonprofit exclusion."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_0611d9369ddecd0f006a9a10226a9487d298b2a5261a3cb4f4",
+      "call_id": "call_HdYP5iTNghNThCKJSrEB70vE",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          },
+          {
+            "handle": "SRC-2"
+          }
+        ],
+        "count": 2
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_0611d9369ddecd0f006a9a1024bfac87d293b1657712d8a640",
+      "call_id": "call_gIFSBZLodw4f0KWmNyVYERBK",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# SBIR/STTR Eligibility Requirements\n\nSource ID: SBIR-ELIGIBILITY-FAQ  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/faq/eligibility-requirements\n\n## Normalized Evidence\n\nFor SBIR/STTR purposes, a qualifying Small Business Concern must satisfy the applicable eligibility requirements at the time of award.\n\nCore requirements include:\n\n- The business must be organized for profit.\n- It must have a place of business in the United States.\n- It must operate primarily within the United States or make a significant contribution to the U.S. economy through taxes or use of American products, materials, or labor.\n- It must satisfy the applicable U.S. ownership and control requirements.\n- Under the standard ownership rule, more than 50 percent must be directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small business concerns, or an allowable combination.\n- The business, including its affiliates, must have no more than 500 employees.\n\nFor SBIR only, additional rules may allow certain participating agencies to make some awards to firms majority-owned by multiple venture capital operating companies, hedge funds, or private equity firms.\n\nThe public eligibility requirements therefore involve more than employee count or U.S. location alone. Ownership, control, affiliation, and other eligibility conditions may also need to be established.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_0611d9369ddecd0f006a9a1026663887d2ad2e568b811672fa",
+      "call_id": "call_e5iwh6w3UxEHKETm5aKFFIPd",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-2"
+      },
+      "output": {
+        "handle": "SRC-2",
+        "content": "# SBIR/STTR Application Eligibility Overview\n\nSource ID: SBIR-APPLY  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/apply\n\n## Normalized Evidence\n\nSBIR.gov describes the basic company eligibility conditions for America's Seed Fund.\n\nA qualifying company generally must:\n\n- Be a for-profit entity located in the United States.\n- Meet the SBIR/STTR small-business size requirement.\n- Satisfy applicable U.S. ownership and control requirements.\n\nSBIR.gov states that qualifying firms generally have no more than 500 employees, subject to the applicable SBA size and affiliation rules.\n\n## Nonprofit Organizations\n\nA nonprofit organization cannot directly receive an SBIR or STTR award.\n\nA nonprofit may participate in other permitted roles, including as a minority investor, subcontractor, or sub-grantee.\n\nUnder STTR, the small-business awardee must work with a qualifying research institution. Eligible research institutions can include nonprofit scientific or educational institutions and Federally Funded Research and Development Centers, subject to program requirements.\n\nThe small business remains the applicant and awardee.\n"
+      }
+    },
+    {
+      "step": 4,
+      "response_id": "resp_0611d9369ddecd0f006a9a10287c3c87d2b2e289e6e1abee38",
+      "call_id": "call_06TAizb0f3phJ5TJRgSYIdm1",
+      "tool": "verify_answer",
+      "arguments": {
+        "evidence_sufficient": true,
+        "unresolved_requirements": [],
+        "must_include": [
+          "Requirements apply at the time of award.",
+          "The applicant must be a for-profit small business with a U.S. place of business.",
+          "It must operate primarily in the United States or significantly contribute to the U.S. economy through taxes or use of American products, materials, or labor.",
+          "It must meet applicable U.S. ownership and control requirements; under the standard rule, more than 50% is directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small businesses, or an allowable combination.",
+          "Including affiliates, it generally may have no more than 500 employees, subject to SBA size and affiliation rules.",
+          "A nonprofit cannot directly receive an SBIR award.",
+          "Certain participating agencies may make SBIR awards under an exception for firms majority-owned by multiple venture-capital operating companies, hedge funds, or private-equity firms."
+        ],
+        "evidence_summary": "SRC-1 provides the full core SBIR/STTR eligibility requirements and the SBIR-specific investment-firm exception; SRC-2 corroborates the for-profit/U.S./size/ownership-control requirements and confirms nonprofits cannot directly receive an SBIR award."
+      },
+      "output": {
+        "verification_recorded": true
+      }
+    },
+    {
+      "step": 5,
+      "response_id": "resp_0611d9369ddecd0f006a9a102c548c87d2b14279efae1477bb",
+      "call_id": "call_ep0wSXXZCoy86ttJotpPyrRZ",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Primary SBIR company eligibility requirements (at the time of award) are that the applicant:\n\n- Is a **for-profit** small business with a **place of business in the United States** (a nonprofit cannot directly receive an SBIR award).\n- Operates primarily in the United States, or makes a significant U.S. economic contribution through taxes or use of American products, materials, or labor.\n- Meets applicable **U.S. ownership and control** rules. Under the standard rule, **more than 50%** must be directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small business concerns, or an allowable combination.\n- Has **no more than 500 employees including affiliates**, subject to applicable SBA size and affiliation rules.\n\nThere is a limited SBIR-specific exception under which certain participating agencies may award firms majority-owned by multiple venture-capital operating companies, hedge funds, or private-equity firms. [SRC-1; SRC-2]",
+        "citations": [
+          "SRC-1",
+          "SRC-2"
+        ],
+        "abstained": false,
+        "evidence_summary": "Official SBIR.gov/SBA materials state the for-profit, U.S. location/operations, ownership-control, and 500-employee-with-affiliates requirements, and identify the limited investment-firm ownership exception."
+      },
+      "output": {
+        "error": "Verification gate blocked an incomplete answer. Missing required facts: ['Requirements apply at the time of award.', 'The applicant must be a for-profit small business with a U.S. place of business.', 'It must operate primarily in the United States or significantly contribute to the U.S. economy through taxes or use of American products, materials, or labor.', 'It must meet applicable U.S. ownership and control requirements; under the standard rule, more than 50% is directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small businesses, or an allowable combination.', 'Including affiliates, it generally may have no more than 500 employees, subject to SBA size and affiliation rules.', 'A nonprofit cannot directly receive an SBIR award.', 'Certain participating agencies may make SBIR awards under an exception for firms majority-owned by multiple venture-capital operating companies, hedge funds, or private-equity firms.']"
+      }
+    },
+    {
+      "step": 6,
+      "response_id": "resp_0611d9369ddecd0f006a9a102fa2e487d2bb687edc6181df66",
+      "call_id": "call_JO6D3dIgbTX4O9wXqKiIF3u0",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Requirements apply at the time of award. The applicant must be a for-profit small business with a U.S. place of business. It must operate primarily in the United States or significantly contribute to the U.S. economy through taxes or use of American products, materials, or labor. It must meet applicable U.S. ownership and control requirements; under the standard rule, more than 50% is directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small businesses, or an allowable combination. Including affiliates, it generally may have no more than 500 employees, subject to SBA size and affiliation rules. A nonprofit cannot directly receive an SBIR award. Certain participating agencies may make SBIR awards under an exception for firms majority-owned by multiple venture-capital operating companies, hedge funds, or private-equity firms. [SRC-1; SRC-2]",
+        "citations": [
+          "SRC-1",
+          "SRC-2"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 establishes the core eligibility conditions and the SBIR-specific investment-firm exception; SRC-2 corroborates the basic for-profit, U.S., size, ownership/control requirements and nonprofit exclusion."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_0611d9369ddecd0f006a9a10226a9487d298b2a5261a3cb4f4",
+    "resp_0611d9369ddecd0f006a9a1024bfac87d293b1657712d8a640",
+    "resp_0611d9369ddecd0f006a9a1026663887d2ad2e568b811672fa",
+    "resp_0611d9369ddecd0f006a9a10287c3c87d2b2e289e6e1abee38",
+    "resp_0611d9369ddecd0f006a9a102c548c87d2b14279efae1477bb",
+    "resp_0611d9369ddecd0f006a9a102fa2e487d2bb687edc6181df66"
+  ],
+  "usage": {
+    "input_tokens": 8363,
+    "output_tokens": 951,
+    "reasoning_tokens": 100,
+    "total_tokens": 9314
+  },
+  "steps_used": 6
+}
