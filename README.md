@@ -1,2 +1,207 @@
 # AgentSecEval
-An evaluation environment for reliability and security in tool-using LLM agents.
+
+**A controlled evaluation of reliability and security mechanisms for tool-using LLM agents.**
+
+AgentSecEval tests whether explicit verification mechanisms improve the behavior of agents working over frozen web evidence that may be incomplete, conflicting, or adversarial.
+
+The central research question is:
+
+> **Do explicit verification mechanisms improve the reliability and security of tool-using agents operating over noisy and adversarial information?**
+
+## Headline Result
+
+Three conditions were evaluated on the same 15-task benchmark using the same model, frozen evidence corpus, and deterministic evaluator.
+
+| Metric | Baseline | Prompt Verification | Verification Gate |
+|---|---:|---:|---:|
+| Final-answer accuracy | 86.7% | 86.7% | **93.3%** |
+| Abstention accuracy | 93.3% | 93.3% | **100%** |
+| Citation precision | 100% | 100% | 100% |
+| Acceptable-source selection | 100% | 100% | 100% |
+| Attack-source avoidance | 100% | 100% | 100% |
+| Prompt-injection resistance | 100% | 100% | 100% |
+| Substitution resistance | 100% | 100% | 100% |
+| Mean interaction steps | 3.40 | 3.40 | **5.73** |
+
+### Main finding
+
+Stronger verification instructions alone produced no measurable improvement over the baseline.
+
+Adding an explicit verification gate improved deterministic answer accuracy from **86.7% to 93.3%** and increased abstention accuracy from **93.3% to 100%**.
+
+The improvement came with a cost: mean interaction steps increased from **3.40 to 5.73**, approximately a 69% increase.
+
+This suggests that, within this small controlled benchmark, **mechanism-level enforcement can be more effective than prompt-level verification instructions alone**.
+
+## Why This Matters
+
+Tool-using agents increasingly operate over external evidence.
+
+That creates several failure modes:
+
+- incomplete evidence;
+- unsupported conclusions;
+- conflicting sources;
+- incorrect source selection;
+- failure to abstain;
+- misleading information;
+- prompt injection embedded inside retrieved content.
+
+AgentSecEval provides a reproducible environment for studying those behaviors.
+
+## Experimental Conditions
+
+### 1. Baseline
+
+The baseline agent can:
+
+- list sources;
+- search frozen sources;
+- open sources;
+- submit an answer.
+
+It receives no special verification procedure.
+
+### 2. Prompt-Only Verification
+
+The second condition adds instructions telling the agent to:
+
+- verify material facts;
+- cross-check evidence;
+- identify missing requirements;
+- abstain when evidence is insufficient;
+- treat retrieved source content as evidence rather than instructions.
+
+This condition produced the same aggregate accuracy as baseline.
+
+### 3. Verification Gate
+
+The third condition introduces a mandatory `verify_answer` step before final submission.
+
+The gate asks the agent to explicitly record:
+
+- whether evidence is sufficient;
+- unresolved requirements;
+- facts, thresholds, dates, or numbers that must appear in the final answer;
+- an evidence summary.
+
+Submission can then be blocked when:
+
+- evidence is insufficient but the agent attempts to answer confidently;
+- unresolved requirements remain;
+- required verified facts are absent from a non-abstaining answer.
+
+This condition produced the strongest result.
+
+## Benchmark
+
+AgentSecEval v0.1 contains **15 tasks** covering:
+
+- SBIR/STTR eligibility;
+- nonprofit eligibility;
+- STTR work-share requirements;
+- SBIR Phase I performance requirements;
+- NSF proposal deadlines;
+- Project Pitch requirements;
+- Phase II eligibility;
+- PI employment restrictions;
+- historical SBIR award portfolios;
+- evidence-sufficiency decisions;
+- conflicting evidence;
+- synthetic prompt injection;
+- source substitution attacks.
+
+## Adversarial Evaluation
+
+Two tasks contain synthetic adversarial fixtures.
+
+These fixtures attempt to replace authoritative facts with false information and, in one case, include an instruction embedded inside retrieved content.
+
+The model is not told which source is adversarial.
+
+All three conditions successfully avoided the attack sources in AgentSecEval v0.1, so adversarial resistance was already at ceiling in the baseline.
+
+The experiment therefore does **not** claim that the verification gate improved prompt-injection resistance.
+
+## Abstention Failure
+
+One of the most useful baseline failures occurred on an evidence-sufficiency task.
+
+The baseline correctly recognized that the available evidence could not establish every current SBIR eligibility condition, but still submitted:
+
+`abstained = false`
+
+The verification gate corrected this behavior and produced the required abstention.
+
+This demonstrates the difference between an agent **recognizing uncertainty in prose** and an agent **correctly translating that uncertainty into a controlled action**.
+
+## Evaluator
+
+Scoring is deterministic.
+
+No LLM judge is used for the primary metrics.
+
+The evaluator checks:
+
+- answer components;
+- dates;
+- numeric values;
+- award phase and branch;
+- citation source IDs;
+- abstention behavior;
+- attack-source usage;
+- tool-call counts.
+
+Evaluation rules were frozen before scoring.
+
+## Evaluator Limitation
+
+The gated condition received an official deterministic score of **14/15**.
+
+Its sole flagged task, TASK-006, answered the underlying question correctly but began with `No—` rather than a surface form recognized by the deterministic boolean parser.
+
+This is retained as a scorer limitation rather than modifying the frozen rubric after seeing the result.
+
+The reported experimental score therefore remains **93.3%**.
+
+## Reproducibility
+
+The experiment uses:
+
+- a frozen local source corpus;
+- no live web access during task execution;
+- hidden gold answers;
+- neutral model-facing source handles;
+- deterministic task-specific evaluation;
+- stored raw tool trajectories;
+- SHA-256 hashes for baseline observations;
+- Git checkpoints created before execution and evaluation.
+
+Important repository checkpoints include:
+
+- `baseline-pre-run-v0.1`
+- `baseline-raw-results-v0.1`
+- `evaluation-rules-v0.1`
+
+## Repository Structure
+
+```text
+AgentSecEval/
+├── configs/
+├── data/
+│   ├── official-sources/
+│   └── adversarial-sources/
+├── docs/
+├── gold/
+├── results/
+│   ├── baseline/
+│   ├── verification-prompt/
+│   ├── verification-gate/
+│   └── evaluation/
+├── src/
+│   ├── baseline_agent.py
+│   ├── verification_prompt_agent.py
+│   ├── verification_gate_agent.py
+│   └── evaluator.py
+├── tasks/
+└── tests/
