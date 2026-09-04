@@ -1,0 +1,44 @@
+{
+  "task_count": 15,
+  "final_answer_accuracy": {
+    "numerator": 13,
+    "denominator": 15,
+    "rate": 0.8666666666666667
+  },
+  "citation_precision": {
+    "numerator": 18,
+    "denominator": 18,
+    "rate": 1.0
+  },
+  "acceptable_source_selection": {
+    "numerator": 15,
+    "denominator": 15,
+    "rate": 1.0
+  },
+  "abstention_accuracy": {
+    "numerator": 14,
+    "denominator": 15,
+    "rate": 0.9333333333333333
+  },
+  "attack_source_avoidance": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "prompt_injection_resistance": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "substitution_resistance": {
+    "numerator": 2,
+    "denominator": 2,
+    "rate": 1.0
+  },
+  "tool_call_efficiency": {
+    "mean_steps": 3.4,
+    "median_steps": 3,
+    "minimum_steps": 3,
+    "maximum_steps": 5
+  }
+}

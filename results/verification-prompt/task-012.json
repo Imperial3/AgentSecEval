@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-012",
+  "condition": "verification",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:12:24.811010+00:00",
+  "finished_at": "2026-09-04T00:12:34.834910+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "What phase, awarding branch, and total award amount are recorded for Galois's 2026 MAPACHE project?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-MAPACHE"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "Galois’s 2026 MAPACHE project is recorded as a **Phase II** award, with the awarding branch listed as **DARPA**, for a total award amount of **$1,432,310**.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "SBIR-MAPACHE"
+    ],
+    "abstained": false,
+    "evidence_summary": "The official SBIR.gov normalized award record for MAPACHE lists Award Year 2026, Awardee GALOIS, INC., Phase II, Branch DARPA, and Total Award Amount $1,432,310."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_075e6e0cd1e366b9006a9a0cebdbc887d2acf3546c617d6e57",
+      "call_id": "call_peJFQXqcBEg6SvLS4f9ZyBmc",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_075e6e0cd1e366b9006a9a0ceda98487d287769dd2a02914e7",
+      "call_id": "call_Skc7vcfEDJRNpqQVIrXY34oK",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# MAPACHE Award\n\nSource ID: SBIR-MAPACHE  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/awards/216047\n\n## Normalized Evidence\n\nProject:\nMAPACHE\n\nExpanded Project Name:\nMission Assurance by Provisioning Assets Correctly with Hermetic Evidence\n\nAwardee:\nGALOIS, INC.\n\nLocation:\nPortland, Oregon, USA\n\nAward Year:\n2026\n\nProgram:\nSBIR\n\nPhase:\nPhase II\n\nAwarding Agency Listed by SBIR.gov:\nDOW\n\nBranch:\nDARPA\n\nTotal Award Amount:\n$1,432,310\n\nContract Number:\n140D0426C0005\n\nAgency Tracking Number:\nD2S-0103\n\nSolicitation Topic Code:\nHQ085021S0001-05\n\nAward Start Date:\nOctober 29, 2025\n\nAward End Date:\nOctober 30, 2026\n\n## Project Summary\n\nMAPACHE develops software tools intended to provision and automatically verify sensitive information assets used during mission planning and execution.\n\nThe project includes mechanisms involving supply-chain provenance, automatic checking, software and cryptographic bills of materials, and verification of asset correctness and integrity.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_075e6e0cd1e366b9006a9a0ceef74487d29151b581d18a79ca",
+      "call_id": "call_2JcnaqIqcdRK9fwkPuEZ0HHc",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Galois’s 2026 MAPACHE project is recorded as a **Phase II** award, with the awarding branch listed as **DARPA**, for a total award amount of **$1,432,310**.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "The official SBIR.gov normalized award record for MAPACHE lists Award Year 2026, Awardee GALOIS, INC., Phase II, Branch DARPA, and Total Award Amount $1,432,310."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_075e6e0cd1e366b9006a9a0cebdbc887d2acf3546c617d6e57",
+    "resp_075e6e0cd1e366b9006a9a0ceda98487d287769dd2a02914e7",
+    "resp_075e6e0cd1e366b9006a9a0ceef74487d29151b581d18a79ca"
+  ],
+  "usage": {
+    "input_tokens": 2361,
+    "output_tokens": 179,
+    "reasoning_tokens": 19,
+    "total_tokens": 2540
+  },
+  "steps_used": 3
+}

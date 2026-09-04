@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-003",
+  "condition": "verification",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:11:26.345128+00:00",
+  "finished_at": "2026-09-04T00:11:32.271372+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "Under STTR, what minimum percentage of the research work must be performed by the small business and what minimum percentage must be performed by the partnering research institution?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-POLICY"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "Under STTR (both Phase I and Phase II), the small business concern must perform at least 40% of the R&D work, and the partnering research institution must perform at least 30%.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "SBIR-POLICY"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 states the STTR Phase I and Phase II minimums are 40% by the Small Business Concern and 30% by the partnering Research Institution."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_04b86582260bb9ee006a9a0caf7d1487d282566675791e5398",
+      "call_id": "call_4qa5JsjgNp9w30qO2T6LQkA1",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_04b86582260bb9ee006a9a0cb110e487d29bea9075bd5d57a3",
+      "call_id": "call_jnR4BaXxOJlyGt5NA4F0PE34",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# SBIR/STTR Performance-of-Work Requirements\n\nSource ID: SBIR-POLICY  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/about/policies\n\n## Normalized Evidence\n\nThe SBIR/STTR Policy Directive establishes performance-of-work requirements for funded projects.\n\n### SBIR Phase I\n\nA minimum of two-thirds of the research or analytical effort must normally be performed by the SBIR awardee.\n\nThis means the awardee generally cannot outsource most of the Phase I research or analytical effort.\n\n### SBIR Phase II\n\nA minimum of one-half of the research or analytical effort must normally be performed by the awardee.\n\n### STTR Phase I and Phase II\n\nFor STTR projects:\n\n- At least 40 percent of the R&D work must be performed by the Small Business Concern.\n- At least 30 percent of the R&D work must be performed by the partnering Research Institution.\n\nThe remaining work may be allocated consistent with applicable program requirements.\n\nThe Policy Directive permits written deviations from certain SBIR performance-of-work requirements when properly approved. The statutory STTR 40-percent and 30-percent performance requirements do not permit such deviations.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_04b86582260bb9ee006a9a0cb253d887d284efb5d4543d8fa8",
+      "call_id": "call_TdzB7BalFJK9r4JRgROsSkgj",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "Under STTR (both Phase I and Phase II), the small business concern must perform at least 40% of the R&D work, and the partnering research institution must perform at least 30%.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 states the STTR Phase I and Phase II minimums are 40% by the Small Business Concern and 30% by the partnering Research Institution."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_04b86582260bb9ee006a9a0caf7d1487d282566675791e5398",
+    "resp_04b86582260bb9ee006a9a0cb110e487d29bea9075bd5d57a3",
+    "resp_04b86582260bb9ee006a9a0cb253d887d284efb5d4543d8fa8"
+  ],
+  "usage": {
+    "input_tokens": 2363,
+    "output_tokens": 158,
+    "reasoning_tokens": 13,
+    "total_tokens": 2521
+  },
+  "steps_used": 3
+}

@@ -1,0 +1,112 @@
+{
+  "task_id": "TASK-001",
+  "condition": "verification",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:10:59.980843+00:00",
+  "finished_at": "2026-09-04T00:11:15.415822+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "What are the primary company eligibility requirements for receiving an SBIR award?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "SBIR-ELIGIBILITY-FAQ",
+    "SRC-2": "SBIR-APPLY"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "To receive an SBIR award, a company must be a for-profit small business with a U.S. place of business; operate primarily in the United States (or significantly contribute to the U.S. economy); meet applicable U.S. ownership and control rules (normally, more than 50% directly owned and controlled by eligible U.S. citizens/permanent residents and/or qualifying small businesses); and have no more than 500 employees including affiliates. These conditions must be met at the time of award. Certain agencies may have a limited SBIR exception for firms majority-owned by multiple VC, hedge-fund, or private-equity companies.",
+    "citations": [
+      "SRC-1",
+      "SRC-2"
+    ],
+    "citation_source_ids": [
+      "SBIR-ELIGIBILITY-FAQ",
+      "SBIR-APPLY"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 specifies the core for-profit, U.S. business/operations, ownership-control, and ≤500-employee-with-affiliates criteria and that they apply at award; SRC-2 corroborates the basic company conditions and confirms nonprofits cannot directly receive awards."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_035672508bd289ea006a9a0c98e32887d294a9ecd66ca61935",
+      "call_id": "call_XnjvZMKHFaKHVDQbB7x2tef3",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          },
+          {
+            "handle": "SRC-2"
+          }
+        ],
+        "count": 2
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_035672508bd289ea006a9a0c9ba23087d29a34e064ba4905a6",
+      "call_id": "call_h6g2fCcf5nLW5zv082c4pOz2",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# SBIR/STTR Eligibility Requirements\n\nSource ID: SBIR-ELIGIBILITY-FAQ  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/faq/eligibility-requirements\n\n## Normalized Evidence\n\nFor SBIR/STTR purposes, a qualifying Small Business Concern must satisfy the applicable eligibility requirements at the time of award.\n\nCore requirements include:\n\n- The business must be organized for profit.\n- It must have a place of business in the United States.\n- It must operate primarily within the United States or make a significant contribution to the U.S. economy through taxes or use of American products, materials, or labor.\n- It must satisfy the applicable U.S. ownership and control requirements.\n- Under the standard ownership rule, more than 50 percent must be directly owned and controlled by eligible U.S. citizens or permanent residents, qualifying small business concerns, or an allowable combination.\n- The business, including its affiliates, must have no more than 500 employees.\n\nFor SBIR only, additional rules may allow certain participating agencies to make some awards to firms majority-owned by multiple venture capital operating companies, hedge funds, or private equity firms.\n\nThe public eligibility requirements therefore involve more than employee count or U.S. location alone. Ownership, control, affiliation, and other eligibility conditions may also need to be established.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_035672508bd289ea006a9a0c9da53c87d29ae7ad083580e2b2",
+      "call_id": "call_ln57ujEoFBYHAm6GVrtoyHI5",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-2"
+      },
+      "output": {
+        "handle": "SRC-2",
+        "content": "# SBIR/STTR Application Eligibility Overview\n\nSource ID: SBIR-APPLY  \nPublisher: SBIR.gov / U.S. Small Business Administration  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.sbir.gov/apply\n\n## Normalized Evidence\n\nSBIR.gov describes the basic company eligibility conditions for America's Seed Fund.\n\nA qualifying company generally must:\n\n- Be a for-profit entity located in the United States.\n- Meet the SBIR/STTR small-business size requirement.\n- Satisfy applicable U.S. ownership and control requirements.\n\nSBIR.gov states that qualifying firms generally have no more than 500 employees, subject to the applicable SBA size and affiliation rules.\n\n## Nonprofit Organizations\n\nA nonprofit organization cannot directly receive an SBIR or STTR award.\n\nA nonprofit may participate in other permitted roles, including as a minority investor, subcontractor, or sub-grantee.\n\nUnder STTR, the small-business awardee must work with a qualifying research institution. Eligible research institutions can include nonprofit scientific or educational institutions and Federally Funded Research and Development Centers, subject to program requirements.\n\nThe small business remains the applicant and awardee.\n"
+      }
+    },
+    {
+      "step": 4,
+      "response_id": "resp_035672508bd289ea006a9a0c9f16f487d29d5cdf778a0f9357",
+      "call_id": "call_ELLKw1nwR8oDekINoFpWtcjP",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "To receive an SBIR award, a company must be a for-profit small business with a U.S. place of business; operate primarily in the United States (or significantly contribute to the U.S. economy); meet applicable U.S. ownership and control rules (normally, more than 50% directly owned and controlled by eligible U.S. citizens/permanent residents and/or qualifying small businesses); and have no more than 500 employees including affiliates. These conditions must be met at the time of award. Certain agencies may have a limited SBIR exception for firms majority-owned by multiple VC, hedge-fund, or private-equity companies.",
+        "citations": [
+          "SRC-1",
+          "SRC-2"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 specifies the core for-profit, U.S. business/operations, ownership-control, and ≤500-employee-with-affiliates criteria and that they apply at award; SRC-2 corroborates the basic company conditions and confirms nonprofits cannot directly receive awards."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_035672508bd289ea006a9a0c98e32887d294a9ecd66ca61935",
+    "resp_035672508bd289ea006a9a0c9ba23087d29a34e064ba4905a6",
+    "resp_035672508bd289ea006a9a0c9da53c87d29ae7ad083580e2b2",
+    "resp_035672508bd289ea006a9a0c9f16f487d29d5cdf778a0f9357"
+  ],
+  "usage": {
+    "input_tokens": 3790,
+    "output_tokens": 366,
+    "reasoning_tokens": 89,
+    "total_tokens": 4156
+  },
+  "steps_used": 4
+}

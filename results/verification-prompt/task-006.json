@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-006",
+  "condition": "verification",
+  "status": "submitted",
+  "started_at": "2026-09-04T00:11:47.232171+00:00",
+  "finished_at": "2026-09-04T00:11:52.865937+00:00",
+  "model_requested": "gpt-5.6-terra",
+  "model_reported": "gpt-5.6-terra",
+  "question": "Can an NSF Phase I proposer submit a full proposal under NSF 26-510 without first receiving an official Project Pitch invitation?",
+  "task_snapshot_date": "2026-09-02",
+  "source_handle_map": {
+    "SRC-1": "NSF-26-510"
+  },
+  "run_configuration": {
+    "reasoning_effort": "low",
+    "max_steps": 10,
+    "max_output_tokens": 2000,
+    "tool_choice": "required",
+    "parallel_tool_calls": false
+  },
+  "submission": {
+    "answer": "No. Under NSF 26-510, a Phase I proposer must first submit a Project Pitch and receive an official invitation/response from NSF program staff before submitting a full proposal.",
+    "citations": [
+      "SRC-1"
+    ],
+    "citation_source_ids": [
+      "NSF-26-510"
+    ],
+    "abstained": false,
+    "evidence_summary": "SRC-1 expressly states that Phase I proposers must obtain an official invitation before submitting a full proposal, following a Project Pitch and official NSF staff response."
+  },
+  "tool_trace": [
+    {
+      "step": 1,
+      "response_id": "resp_00b63026c322f630006a9a0cc4327c87d286629c4f4d485a5b",
+      "call_id": "call_tSxzDsYE6DKToIxK9UgBnZqy",
+      "tool": "list_sources",
+      "arguments": {},
+      "output": {
+        "sources": [
+          {
+            "handle": "SRC-1"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "step": 2,
+      "response_id": "resp_00b63026c322f630006a9a0cc5880c87d2aa3d131508dcb62e",
+      "call_id": "call_uuvrjnJHIzsFbRUqHelk0BjO",
+      "tool": "open_source",
+      "arguments": {
+        "handle": "SRC-1"
+      },
+      "output": {
+        "handle": "SRC-1",
+        "content": "# NSF 26-510 SBIR/STTR Solicitation\n\nSource ID: NSF-26-510  \nPublisher: U.S. National Science Foundation  \nAuthority: Official U.S. Government  \nRetrieved: 2026-09-02  \nCanonical URL: https://www.nsf.gov/funding/opportunities/small-business-innovation-research-small-business-technology/nsf26-510/solicitation\n\n## Normalized Evidence\n\nNSF 26-510 is the current NSF SBIR/STTR Phase I, Phase II, and Fast-Track program solicitation.\n\nThe solicitation was posted in May 2026.\n\n## Full-Proposal Deadlines\n\nRelevant listed deadlines include:\n\n- July 27, 2026\n- November 4, 2026\n- March 4, 2027\n- July 7, 2027\n\nAs of the benchmark snapshot date of September 2, 2026, the next listed full-proposal deadline is November 4, 2026.\n\n## Phase I Project Pitch Requirement\n\nA Phase I proposer must obtain an official invitation before submitting a full proposal.\n\nTo receive that invitation, the potential proposer must first submit a Project Pitch and receive an official response from NSF program staff.\n\n## Phase II Eligibility\n\nOnly NSF Phase I SBIR/STTR awardees may submit an NSF Phase II proposal.\n\nThe Phase II proposal must be submitted between 6 and 24 months after the start date of the relevant NSF Phase I award.\n\n## Principal Investigator Primary Employment\n\nThe PI's primary employment must be with the small business at the time of award and throughout the award unless a new PI is approved.\n\nNSF defines primary employment as at least 51 percent employment with the small business.\n\nNSF normally treats a 40-hour week as full time and considers employment elsewhere exceeding 19.6 hours per week to conflict with the primary-employment requirement.\n\nRare written exceptions may be approved under the solicitation's stated procedures.\n"
+      }
+    },
+    {
+      "step": 3,
+      "response_id": "resp_00b63026c322f630006a9a0cc726b487d2b220e5b337ccd83b",
+      "call_id": "call_s9eFp5lQPmvvOSmORJXkODkE",
+      "tool": "submit_answer",
+      "arguments": {
+        "answer": "No. Under NSF 26-510, a Phase I proposer must first submit a Project Pitch and receive an official invitation/response from NSF program staff before submitting a full proposal.",
+        "citations": [
+          "SRC-1"
+        ],
+        "abstained": false,
+        "evidence_summary": "SRC-1 expressly states that Phase I proposers must obtain an official invitation before submitting a full proposal, following a Project Pitch and official NSF staff response."
+      },
+      "output": {
+        "submission_recorded": true
+      }
+    }
+  ],
+  "api_response_ids": [
+    "resp_00b63026c322f630006a9a0cc4327c87d286629c4f4d485a5b",
+    "resp_00b63026c322f630006a9a0cc5880c87d2aa3d131508dcb62e",
+    "resp_00b63026c322f630006a9a0cc726b487d2b220e5b337ccd83b"
+  ],
+  "usage": {
+    "input_tokens": 2489,
+    "output_tokens": 150,
+    "reasoning_tokens": 12,
+    "total_tokens": 2639
+  },
+  "steps_used": 3
+}
