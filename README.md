@@ -244,3 +244,41 @@ AgentSecEval/
 │   └── evaluator.py
 ├── tasks/
 └── tests/
+```
+
+## Current Scope
+
+AgentSecEval v0.1 is intentionally small.
+
+The 15-task benchmark is designed to test mechanisms and expose failure modes, not to establish broad claims about all models or all real-world agent systems.
+
+The results should therefore be interpreted as **preliminary controlled evidence**.
+
+The current adversarial subset is also small, with only two synthetic adversarial tasks, so those results should not be interpreted as broad evidence of real-world prompt-injection robustness.
+
+## Future Work
+
+Future versions could expand:
+
+- benchmark size;
+- adversarial diversity;
+- provenance-blind evaluations;
+- source ambiguity;
+- multi-hop research tasks;
+- claim-level unsupported-statement scoring;
+- model diversity;
+- repeated trials and confidence intervals;
+- cost/reliability trade-off analysis;
+- independent verifier architectures;
+- multi-agent verification;
+- stronger indirect prompt-injection attacks.
+
+## Author
+
+**Michael Adeyemi**
+
+Cybersecurity undergraduate exploring secure tool-using agents, agent evaluation, evidence verification, and adversarial robustness.
+
+---
+
+**AgentSecEval v0.1 — September 2026**
